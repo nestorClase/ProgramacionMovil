@@ -1,9 +1,17 @@
+import Ejer1.Cuenta
 import java.util.Scanner
 
 fun main() {
-    println(temperaturas(1,25.5))
-    println(temperaturas(2,25.5))
-    println(temperaturas(3,25.5))
+    Cuenta("Juan", 100.0).apply {
+        ingresar(300.0)
+        retirar(100.0)
+        println(this)
+    }
+    Cuenta("pedro").apply {
+        ingresar(300.0)
+        retirar(100.0)
+        println(this)
+    }
 }
 
 fun temperaturas(formula:Int,temp:Double) {
@@ -21,6 +29,12 @@ fun temperaturas(formula:Int,temp:Double) {
             operacion=(5/9*(temp-32)+273.15)
             println("$temp grados Fahrenheit son $operacion grados Kelvin.")
         }
+    }
+}
+
+fun bucle(){
+    for (x in 0 until 10) {
+        println(x)
     }
 }
 
