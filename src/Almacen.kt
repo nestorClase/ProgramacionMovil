@@ -1,5 +1,7 @@
 package Ejer2
 
+import java.sql.DriverManager.println
+
 class Almacen {
 
     // Matriz bidimensional de bebidas (5x5)
@@ -10,16 +12,16 @@ class Almacen {
         // Comprobar si el ID de la bebida ya existe
         if(comprobarID(bebida.id)){
             println("La bebida ya existe")
-            return
-        }
-        // Recorrer cada fila de la matriz
-        for (fila in bebidas) {
-            // Recorrer cada bebida en la fila (sub-array)
-            for (i in 0 until fila.size) {
-                //
-                if (fila[i] == null) {
-                    fila[i] = bebida  // Si encuentra un espacio vacío, añade la bebida
-                    return
+        }else {
+            // Recorrer cada fila de la matriz
+            for (fila in bebidas) {
+                // Recorrer cada bebida en la fila (sub-array)
+                for (i in 0 until fila.size) {
+                    //
+                    if (fila[i] == null) {
+                        fila[i] = bebida  // Si encuentra un espacio vacío, añade la bebida
+                        return
+                    }
                 }
             }
         }
